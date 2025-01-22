@@ -6,10 +6,12 @@ import Sell from "./products/Sell";
 import Navbar from "@/components/Navbar";
 import Picture from "@/components/Picture";
 
-
-export default function Home() {
+export default async function Home() {
+ 
   return (
+   
    <div>
+   
     <Topheader/>
     <Header/>
     <Herosection/>
@@ -20,5 +22,6 @@ export default function Home() {
    
     
    </div>
+   
   );
 }
