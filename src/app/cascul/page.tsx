@@ -24,11 +24,13 @@ export default function CasculPage() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {/* Example product cards */}
         <div className="border rounded-lg p-4 shadow hover:shadow-lg transition">
-          <Image
-            src="/image 1.png"
-            alt="Casual Shirt"
-            className="w-[250px]  object-center rounded-md mb-4 "
-          />
+        <Image
+  src="/image 1.png"
+  alt="Casual Shirt"
+  width={250}
+  height={250}
+  className="w-[250px]  object-center rounded-md mb-4"
+/>
           <h2 className="text-xl font-semibold">Casual Shirt</h2>
           <p className="text-gray-600">Comfortable and stylish for everyday wear.</p>
           <button className="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
@@ -40,6 +42,8 @@ export default function CasculPage() {
           <Image
             src="/image 2.png"
             alt="Jeans"
+            width={250}
+  height={250}
             className="w-[250px] object-cover rounded-md mb-4"
           />
           <h2 className="text-xl font-semibold">Jeans</h2>
@@ -53,6 +57,8 @@ export default function CasculPage() {
           <Image
             src="/image 3.png"
             alt="Casual Pants"
+            width={250}
+  height={250}
             className="w-[250px]  object-cover rounded-md mb-4"
           />
           <h2 className="text-xl font-semibold">T-Shirt</h2>
@@ -65,6 +71,8 @@ export default function CasculPage() {
           <Image
             src="/image 4.png"
             alt="Casual Shirt"
+            width={250}
+  height={250}
             className="w-[250px]  object-center rounded-md mb-4 "
           />
           <h2 className="text-xl font-semibold">Winter Shirt</h2>

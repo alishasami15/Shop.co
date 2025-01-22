@@ -27,6 +27,8 @@ export default function shirtPage() {
           <Image
             src="/blue.png"
             alt="Casual Shirt"
+            width={250}
+  height={250}
             className="w-[250px]  object-center rounded-md mb-4 "
           />
           <h2 className="text-xl font-semibold">Jearcy</h2>
@@ -40,6 +42,8 @@ export default function shirtPage() {
           <Image
             src="/pink.png"
             alt="Jeans"
+            width={250}
+  height={250}
             className="w-[250px] object-cover rounded-md mb-4"
           />
           <h2 className="text-xl font-semibold">Jearcy Wear</h2>
@@ -53,6 +57,8 @@ export default function shirtPage() {
           <Image
             src="/white.png"
             alt="Casual Pants"
+            width={250}
+  height={250}
             className="w-[250px]  object-cover rounded-md mb-4"
           />
           <h2 className="text-xl font-semibold"> White Jearcy </h2>
@@ -65,6 +71,8 @@ export default function shirtPage() {
           <Image
             src="/shirt-color.png"
             alt="Casual Shirt"
+            width={250}
+  height={250}
             className="w-[250px]  object-center rounded-md mb-4 "
           />
           <h2 className="text-xl font-semibold">Jearcy Tees</h2>
