@@ -1,4 +1,4 @@
-import { BreadcrumbDemo } from "@/components/Bredcrupm";
+
 import Image from "next/image";
 import Link from "next/link";
 import { FaStar } from "react-icons/fa";
@@ -53,7 +53,6 @@ const star = [
 export default function Products(){
     return(
         <div className="w-full h-full sm:h-[500px] mt-10 max-w-screen-2xl mx-auto">
-            <BreadcrumbDemo/>
             <h1 className="text-3xl md:text-4xl font-bold text-center">NEW ARRIVALS</h1>
             <div className="flex flex-col md:flex-row justify-center items-center md:justify-between px-8 mt-10">
                 {

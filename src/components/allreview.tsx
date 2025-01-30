@@ -62,16 +62,16 @@ const star = [
   
 export default function AllReview(){
     return(
-        <main className=" max-w-screen-2xl mx-auto">
+        <main className=" max-w-screen-2xl mx-auto pt-40 md:pt-0">
              {/* top */}
              <div className="px-5 flex justify-between">
-             <h1 className="text-3xl pt-10 pb-10">All Reviews</h1>
+             <h1 className="text-3xl pt-20 pb-2">All Reviews</h1>
                <div className="space-x-3">
                </div>
              </div>
              {/* container */}
              <div>
-                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-5 mt-3 md:mt-0">
+                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-5  md:mt-0">
                   {
                     Review.map((data,i)=>{
                       return (

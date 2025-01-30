@@ -50,7 +50,8 @@ const star = [
   ];
 export default function Tshirts(){
     return(
-        <div className="w-full h-full sm:h-[500px] mt-10  max-w-screen-2xl mx-auto">
+        <div className="w-full  h-full sm:h-[400px] mt-20  max-w-screen-2xl mx-auto pt-50 md:pt-0">
+  
             <h1 className="text-3xl md:text-4xl font-bold text-center">You might also like</h1>
             <div className="flex flex-col md:flex-row justify-center items-center md:justify-between px-8 mt-10">
                 {

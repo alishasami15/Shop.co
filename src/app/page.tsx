@@ -1,5 +1,4 @@
-import Topheader from "@/components/Topheader";
-import Header from "@/components/Header";
+
 import Herosection from "@/components/Herosection";
 import Products from "./products/page";
 import Sell from "./products/Sell";
@@ -12,13 +11,13 @@ export default async function Home() {
    
    <div>
    
-    <Topheader/>
-    <Header/>
+   
     <Herosection/>
     <Products/>
     <Sell/>
     <Picture/>
-    <Navbar/>
+    
+    
    
     
    </div>
