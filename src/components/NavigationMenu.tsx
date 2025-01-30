@@ -16,7 +16,7 @@ import {
 const components: { title: string; href: string; description: string }[] = [
   {
     title: "Carts",
-    href: "/pages/cart",
+    href: "/cart",
     description: "Cart detail in order",
   },
   {

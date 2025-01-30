@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
 import { BreadcrumbDemo } from "@/components/Bredcrupm";
 import Topheader from "@/components/Topheader";
 import  Header  from "@/components/Header";
 import Navbar from "@/components/Navbar";
+import { CartProvider } from "@/context/CartContext"; 
 
 
 export const metadata: Metadata = {
@@ -21,11 +21,15 @@ export default function RootLayout({
     <html lang="en">
       <body
       >
-         <Topheader/>
+     
+      
+        <CartProvider>
+        <Topheader/>
       <Header/>
     <BreadcrumbDemo />
-        {children}
-        <Navbar/>
+      {children}
+      <Navbar/>
+    </CartProvider>
         
         
       </body>
