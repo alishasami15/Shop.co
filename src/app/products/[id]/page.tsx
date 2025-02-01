@@ -41,16 +41,16 @@ export default function Pro_Detail() {
   const id = Number(params.id);
   const { addToCart } = useCart(); 
 
-  const item = products.find((item) => item.id === id);
-  if (!item ) {
-    return <h1 className="text-center text-2xl mt-10">Product not found</h1>;
-  }
 
   const [quantity, setQuantity] = useState(1);
   const [selectedSize, setSelectedSize] = useState("M");
   const [selectedColor, setSelectedColor] = useState("Black");
 
-  const handleAddToCart = () => {
+  const item = products.find((item) => item.id === id);
+  if (!item ) {
+    return <h1 className="text-center text-2xl mt-10">Product not found</h1>;
+  }
+ const handleAddToCart = () => {
     const cartItem = {
       id: item.id,
       title: item.title,
