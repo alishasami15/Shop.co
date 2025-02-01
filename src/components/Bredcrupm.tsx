@@ -14,9 +14,8 @@ import {
         <BreadcrumbList>
           <BreadcrumbItem>
           
-            <BreadcrumbLink href="/" className="pl-6 mt-1 text-bold text-[20px]">Home</BreadcrumbLink>
-            <BreadcrumbLink href="/clothes" className="pl-6 mt-1 text-bold text-[20px]">clothes</BreadcrumbLink>
-            <BreadcrumbLink href="/detail" className="pl-6 mt-1 text-bold text-[20px]">carts</BreadcrumbLink>
+            <BreadcrumbLink></BreadcrumbLink>
+          
           </BreadcrumbItem>
          
          

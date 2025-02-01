@@ -1,4 +1,4 @@
-
+"use client"
 import React from 'react';
 import Image from 'next/image';
 
@@ -87,6 +87,8 @@ const Navbar = () => {
           className="w-full object-contain"
         />
       </div>
+
+ 
     </div>
   );
 };

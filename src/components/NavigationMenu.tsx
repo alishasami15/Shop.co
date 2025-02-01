@@ -14,11 +14,7 @@ import {
 
 // Array containing all the navigation items with title, href, and description
 const components: { title: string; href: string; description: string }[] = [
-  {
-    title: "Carts",
-    href: "/cart",
-    description: "Cart detail in order",
-  },
+
   {
     title: "Winter clothes",
     href: "/clothes",
@@ -39,6 +35,16 @@ const components: { title: string; href: string; description: string }[] = [
     href: "/Mens",
     description: "For all ages, with happy and beautiful colors",
   },
+  {
+    title: "Home",
+    href: "/",
+    description: "Website",
+  },
+  {
+    title: "Carts",
+    href: "/cart",
+    description: "Cart detail in order",
+  },
 ]
 
 export function NavigationMenuDemo() {
@@ -49,6 +55,7 @@ export function NavigationMenuDemo() {
           <NavigationMenuTrigger className="text-md">
             Shop
           </NavigationMenuTrigger>
+          
           <NavigationMenuContent>
             <ul className="grid sm:w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
               {components.map((component, index) => (

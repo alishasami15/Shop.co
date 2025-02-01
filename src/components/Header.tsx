@@ -1,4 +1,4 @@
-
+'use client'
 import React from 'react';
 import { IoIosSearch } from 'react-icons/io';
 import { BsCart3 } from 'react-icons/bs';
@@ -8,6 +8,7 @@ import { SheetDemo } from './sheet';
 import { NavigationMenuDemo } from './NavigationMenu';
 
 const Header = () => {
+
   return (
     <header className="max-w-screen-2xl mx-auto flex flex-wrap items-center justify-between w-full px-4 md:px-8 lg:px-20 mt-6">
       {/* Logo */}
@@ -18,9 +19,14 @@ const Header = () => {
 
       {/* Navigation Menu */}
       <ul className="hidden md:flex gap-7 text-[#000000] text-base font-satoshi flex items-center">
+      <li className="cursor-pointer hover:text-blue-500">
+          <Link href={"/"}>Home</Link>
+        </li>
+
         <li className="cursor-pointer hover:text-blue-500">
           <Link href={""}><NavigationMenuDemo /></Link>
         </li>
+        
         <li className="cursor-pointer hover:text-blue-500">
           <Link href={"/cascul"}>On Sale</Link>
         </li>
@@ -45,17 +51,14 @@ const Header = () => {
       </div>
 
       {/* Icons */}
-      <div className="flex gap-4 mt-2 md:mt-0">
-        {/* Cart Icon with Link */}
-        <Link href="/pages/cart">
-  
-    <BsCart3 className="w-6 h-6 cursor-pointer text-[#000000]" />
-  
+     
+             <Link href="/cart">
+  <BsCart3 className="w-6 h-6 cursor-pointer text-[#000000]" />
 </Link>
 
         {/* User Icon */}
         <FaRegUserCircle className="w-6 h-6 cursor-pointer text-[#000000]" />
-      </div>
+      
     </header>
   );
 };

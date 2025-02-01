@@ -1,3 +1,5 @@
+"use client";
+
 import Image from 'next/image';
 import React from 'react';
 
@@ -13,7 +15,7 @@ const Herosection = () => {
         </h1>
 
         {/* Paragraph */}
-        <p className="text-[24px] lg:text-normal  text-left font-['Satoshi'] font-normal mt-6 lg:mt-10  lg:w-[545px] w-[200px]  lg:absolute left-15 top-60 ">
+        <p className="text-[20px] lg:text-normal  text-left font-['Satoshi'] font-normal mt-6 lg:mt-10  lg:w-[545px] w-[200px]  lg:absolute left-15 top-60 ">
           Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.
         </p>
         

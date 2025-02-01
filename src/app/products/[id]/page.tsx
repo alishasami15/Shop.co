@@ -3,12 +3,11 @@ import Image from "next/image";
 import { FaStar } from "react-icons/fa";
 import { useParams } from "next/navigation";
 import { useState } from "react";
+import { useCart } from "@/context/CartContext"; 
 import AllReview from "@/components/allreview";
 import Tshirts from "@/components/image9";
 
-const star = [
-  <FaStar key={1} />, <FaStar key={2} />, <FaStar key={3} />, <FaStar key={4} />, <FaStar key={5} />,
-];
+const star = [<FaStar key={1} />, <FaStar key={2} />, <FaStar key={3} />, <FaStar key={4} />, <FaStar key={5} />];
 
 interface Iproducts {
   title: string;
@@ -22,8 +21,8 @@ interface Iproducts {
   img3: string;
 }
 
-const product: Iproducts[] = [
-  { title: "T-SHIRT WITH TAPE DETAILS", id: 1, price: "$140", img_url: "/image 1.png", img1: "/image 1.png", img2: "/image 1.png", img3: "/image 1.png" },
+const products : Iproducts[] = [
+  { title: "T-SHIRT WITH TAPE DETAILS", id: 1, price: "$140", img_url: "/images/image-1.png", img1: "/images/image-1.png", img2: "/images/image-1.png", img3: "/images/image-1.png"},
   { title: "SKINNY FIT JEANS", id: 2, price: "$120", img_url: "/image 2.png", old_price: "$200", img1: "/image 2.png", img2: "/image 2.png", img3: "/image 2.png" },
   { title: "CHECKERED SHIRT", id: 3, price: "$120", img_url: "/image 3.png", img1: "/image 3.png", img2: "/image 3.png", img3: "/image 3.png" },
   { title: "SLEEVE STRIPED T-SHIRT", id: 4, price: "$120", img_url: "/image 4.png", old_price: "$200", img1: "/image 4.png", img2: "/image 4.png", img3: "/image 4.png" },
@@ -39,22 +38,19 @@ const product: Iproducts[] = [
 
 export default function Pro_Detail() {
   const params = useParams();
-  const id = Number(params.id); // Convert to number
+  const id = Number(params.id);
+  const { addToCart } = useCart(); 
 
-  // Check for a valid product
-  const item = product.find((item) => item.id === id);
-  if (!item || id > product.length) {
+  const item = products.find((item) => item.id === id);
+  if (!item ) {
     return <h1 className="text-center text-2xl mt-10">Product not found</h1>;
   }
 
-  // Cart State
-  const [cart, setCart] = useState<any[]>([]);
   const [quantity, setQuantity] = useState(1);
   const [selectedSize, setSelectedSize] = useState("M");
   const [selectedColor, setSelectedColor] = useState("Black");
 
-  // Add to Cart Functionality
-  const addToCart = () => {
+  const handleAddToCart = () => {
     const cartItem = {
       id: item.id,
       title: item.title,
@@ -64,64 +60,25 @@ export default function Pro_Detail() {
       color: selectedColor,
     };
 
-    setCart((prevCart) => [...prevCart, cartItem]);
-    alert(`${item.title} added to cart!`);
+    addToCart(cartItem); 
   };
 
   return (
     <>
       <div className="flex flex-col md:flex-row justify-center sm:justify-evenly sm:mt-10 p-5 sm:p-0 max-w-screen-2xl mx-auto">
-        {/* Left Section */}
-        <div className="flex sm:flex-col justify-between items-center w-full sm:w-[152px] order-2 sm:order-1">
-          <Image
-            src={item.img1}
-            className="w-[100px] sm:w-full h-[100px] sm:h-[150px]"
-            alt={item.title}
-            width={100}
-            height={100}
-          />
-          <Image
-            src={item.img2}
-            className="w-[100px] sm:w-full h-[100px] sm:h-[150px] sm:mt-3"
-            alt={item.title}
-            width={100}
-            height={100}
-          />
-          <Image
-            src={item.img3}
-            className="w-[100px] sm:w-full h-[100px] sm:h-[150px] sm:mt-3"
-            alt={item.title}
-            width={100}
-            height={100}
-          />
+        <div className="w-full sm:w-[444px] h-[260px] sm:h-[500px] mt-5 sm:mt-0">
+          <Image src={item.img3} alt={item.title} className="w-full h-[95%]" width={100} height={100} />
         </div>
 
-        {/* Middle Section */}
-        <div className="w-full sm:w-[444px] h-[260px] sm:h-[500px] mt-5 sm:mt-0 order-1 sm:order-2">
-          <Image
-            src={item.img3}
-            alt={item.title}
-            className="w-full h-[95%]"
-            width={100}
-            height={100}
-          />
-        </div>
-
-        {/* Right Section */}
-        <div className="w-full sm:w-[600px] h-[200px] mt-3 order-3">
+        <div className="w-full sm:w-[600px] h-[200px] mt-3">
           <h1 className="text-2xl md:text-3xl font-bold">{item.title}</h1>
-          <div className="flex text-yellow-400 ">{star.map((icon, index) => (<span key={index}>{icon}</span>))}</div>
+          <div className="flex text-yellow-400">{star.map((icon, index) => (<span key={index}>{icon}</span>))}</div>
           <p className="font-bold mt-1">{item.price} <span>{item.old_price}</span></p>
-          <p>This graphic t-shirt is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.</p>
+          <p>This graphic t-shirt is perfect for any occasion.</p>
 
-          {/* Select Size */}
           <div className="mt-4">
             <label className="block font-medium">Size:</label>
-            <select
-              value={selectedSize}
-              onChange={(e) => setSelectedSize(e.target.value)}
-              className="border rounded-lg p-2 mt-2 w-full"
-            >
+            <select value={selectedSize} onChange={(e) => setSelectedSize(e.target.value)} className="border rounded-lg p-2 mt-2 w-full">
               <option value="S">Small</option>
               <option value="M">Medium</option>
               <option value="L">Large</option>
@@ -129,14 +86,9 @@ export default function Pro_Detail() {
             </select>
           </div>
 
-          {/* Select Color */}
           <div className="mt-4">
             <label className="block font-medium">Color:</label>
-            <select
-              value={selectedColor}
-              onChange={(e) => setSelectedColor(e.target.value)}
-              className="border rounded-lg p-2 mt-2 w-full"
-            >
+            <select value={selectedColor} onChange={(e) => setSelectedColor(e.target.value)} className="border rounded-lg p-2 mt-2 w-full">
               <option value="Black">Black</option>
               <option value="White">White</option>
               <option value="Blue">Blue</option>
@@ -144,23 +96,12 @@ export default function Pro_Detail() {
             </select>
           </div>
 
-          {/* Select Quantity */}
           <div className="mt-4">
             <label className="block font-medium">Quantity:</label>
-            <input
-              type="number"
-              min="1"
-              value={quantity}
-              onChange={(e) => setQuantity(Number(e.target.value))}
-              className="border rounded-lg p-2 mt-2 w-full"
-            />
+            <input type="number" min="1" value={quantity} onChange={(e) => setQuantity(Number(e.target.value))} className="border rounded-lg p-2 mt-2 w-full" />
           </div>
 
-          {/* Add to Cart Button */}
-          <button
-            onClick={addToCart}
-            className="mt-5 px-6 py-2 bg-black text-white rounded-full text-lg"
-          >
+          <button onClick={handleAddToCart} className="mt-5 px-6 py-2 bg-black text-white rounded-full text-lg">
             Add to Cart
           </button>
         </div>
@@ -168,7 +109,6 @@ export default function Pro_Detail() {
 
       <AllReview />
       <Tshirts />
-    
     </>
   );
 }

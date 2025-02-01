@@ -21,14 +21,12 @@ export default function RootLayout({
     <html lang="en">
       <body
       >
-     
-      
         <CartProvider>
         <Topheader/>
       <Header/>
     <BreadcrumbDemo />
-      {children}
-      <Navbar/>
+     {children}
+     <Navbar/>
     </CartProvider>
         
         
