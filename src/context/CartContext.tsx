@@ -26,7 +26,7 @@ export const CartProvider = ({ children }) => {
   // Add product to cart
   const addToCart = (product) => {
     setCart((prev) => [...prev, product]);
-    router.push("/cart"); // Redirect to cart page
+    router.push("/cart"); 
   };
 
   // Remove product
@@ -40,3 +40,5 @@ export const CartProvider = ({ children }) => {
     </CartContext.Provider>
   );
 };
+
+
