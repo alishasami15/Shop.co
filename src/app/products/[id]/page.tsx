@@ -100,6 +100,7 @@ export default function Pro_Detail() {
             <label className="block font-medium">Quantity:</label>
             <input type="number" min="1" value={quantity} onChange={(e) => setQuantity(Number(e.target.value))} className="border rounded-lg p-2 mt-2 w-full" />
           </div>
+          
 
           <button onClick={handleAddToCart} className="mt-5 px-6 py-2 bg-black text-white rounded-full text-lg">
             Add to Cart
