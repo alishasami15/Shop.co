@@ -4,7 +4,7 @@ import Products from "./products/page";
 import Sell from "./products/sell";
 import Picture from "@/components/Picture";
 
-export default async function Home() {
+export default function Home() {
  
   return (
    
