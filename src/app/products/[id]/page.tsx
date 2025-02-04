@@ -8,16 +8,16 @@ import AllReview from "@/components/allreview";
 import Tshirts from "@/components/image9";
 import { useRouter } from "next/navigation"; 
 import  Producted  from "@/types/producted";
-import type { CartItem } from "@/types/cart";
+import type  {CartItem} from "@/types/cart";
 
 const star = [<FaStar key={1} />, <FaStar key={2} />, <FaStar key={3} />, <FaStar key={4} />, <FaStar key={5} />];
 
 interface product {
   title: string;
-  price: string;
+  price: string | number;
   id: number;
   rating?: string;
-  old_price?: string;
+  old_price?: string | number;
   img_url: string;
   img1: string;
   img2: string;
@@ -59,7 +59,7 @@ export default function Pro_Detail() {
       alert("Please select a size and color before adding to cart");
       return;
     }
-
+    
  const handleAddToCart =(item: Producted) => {
     const cartItem: CartItem = {
       id: item.id,
@@ -67,13 +67,13 @@ export default function Pro_Detail() {
       price: item.price,
       size: selectedSize,
       color: selectedColor,
-      quantity: 1, 
+      quantity: quantity,
     };
+  
     // addToCart(item); 
-    router.push("/cart");
     addToCart(cartItem); 
+    router.push("/cart");
   };
-
   return (
     <>
       <div className="flex flex-col md:flex-row justify-center sm:justify-evenly sm:mt-10 p-5 sm:p-0 max-w-screen-2xl mx-auto">
