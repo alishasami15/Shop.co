@@ -6,10 +6,13 @@ import { useState } from "react";
 import { useCart } from "@/context/CartContext"; 
 import AllReview from "@/components/allreview";
 import Tshirts from "@/components/image9";
+import { useRouter } from "next/navigation"; 
+import  Producted  from "@/types/producted";
+import type { CartItem } from "@/types/cart";
 
 const star = [<FaStar key={1} />, <FaStar key={2} />, <FaStar key={3} />, <FaStar key={4} />, <FaStar key={5} />];
 
-interface Iproducts {
+interface product {
   title: string;
   price: string;
   id: number;
@@ -21,7 +24,8 @@ interface Iproducts {
   img3: string;
 }
 
-const products : Iproducts[] = [
+
+const products : product[] = [
   { title: "T-SHIRT WITH TAPE DETAILS", id: 1, price: "$140", img_url: "/images/image-1.png", img1: "/images/image-1.png", img2: "/images/image-1.png", img3: "/images/image-1.png"},
   { title: "SKINNY FIT JEANS", id: 2, price: "$120", img_url: "/image 2.png", old_price: "$200", img1: "/image 2.png", img2: "/image 2.png", img3: "/image 2.png" },
   { title: "CHECKERED SHIRT", id: 3, price: "$120", img_url: "/image 3.png", img1: "/image 3.png", img2: "/image 3.png", img3: "/image 3.png" },
@@ -40,6 +44,7 @@ export default function Pro_Detail() {
   const params = useParams();
   const id = Number(params.id);
   const { addToCart } = useCart(); 
+    const router = useRouter();
 
 
   const [quantity, setQuantity] = useState(1);
@@ -50,16 +55,22 @@ export default function Pro_Detail() {
   if (!item ) {
     return <h1 className="text-center text-2xl mt-10">Product not found</h1>;
   }
- const handleAddToCart = () => {
-    const cartItem = {
+    if (!selectedSize || !selectedColor) {
+      alert("Please select a size and color before adding to cart");
+      return;
+    }
+
+ const handleAddToCart =(item: Producted) => {
+    const cartItem: CartItem = {
       id: item.id,
       title: item.title,
       price: item.price,
-      quantity,
       size: selectedSize,
       color: selectedColor,
+      quantity: 1, 
     };
-
+    // addToCart(item); 
+    router.push("/cart");
     addToCart(cartItem); 
   };
 
@@ -102,9 +113,10 @@ export default function Pro_Detail() {
           </div>
           
 
-          <button onClick={handleAddToCart} className="mt-5 px-6 py-2 bg-black text-white rounded-full text-lg">
+          <button onClick={() => handleAddToCart(item)}  className="mt-5 px-6 py-2 bg-black text-white rounded-full text-lg">
             Add to Cart
           </button>
+        
         </div>
       </div>
 

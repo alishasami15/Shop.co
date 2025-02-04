@@ -1,37 +1,34 @@
-
 "use client";
 
-import { createContext, useContext, useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import React, { createContext, useContext, useState, ReactNode } from "react";
 
-const CartContext = createContext();
+type CartItem = {
+  id: number;
+  title: string;
+  price: string;
+  size: string;
+  quantity: number;
+  color: string;
 
-export const useCart = () => useContext(CartContext);
+}
 
-export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState([]);
-  const router = useRouter();
+interface CartContextType {
+  cart: CartItem[];
+  addToCart: (item: CartItem) => void;
+  removeFromCart: (id: number) => void;
+}
 
-  // Load cart from Local Storage on mount
-  useEffect(() => {
-    const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
-    setCart(savedCart);
-  }, []);
+const CartContext = createContext<CartContextType | undefined>(undefined);
 
-  // Save cart to Local Storage whenever cart updates
-  useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
-  }, [cart]);
+export const CartProvider = ({ children }: { children: ReactNode }) => {
+  const [cart, setCart] = useState<CartItem[]>([]);
 
-  // Add product to cart
-  const addToCart = (product) => {
-    setCart((prev) => [...prev, product]);
-    router.push("/cart"); 
+  const addToCart = (item: CartItem) => {
+    setCart((prevCart) => [...prevCart, item]);
   };
 
-  // Remove product
-  const removeFromCart = (id) => {
-    setCart((prev) => prev.filter((item) => item.id !== id));
+  const removeFromCart = (id: number) => {
+    setCart((prevCart) => prevCart.filter((item) => item.id !== id));
   };
 
   return (
@@ -41,4 +38,10 @@ export const CartProvider = ({ children }) => {
   );
 };
 
-
+export const useCart = () => {
+  const context = useContext(CartContext);
+  if (!context) {
+    throw new Error("useCart must be used within a CartProvider");
+  }
+  return context;
+};

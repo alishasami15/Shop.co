@@ -1,4 +1,4 @@
-export type Clothes = {
+export  default interface Clothes  {
     _id:string,
     name:string,
     size:string,
@@ -6,4 +6,4 @@ export type Clothes = {
     price:number,
     image_url:string,
     rating:number
-}
+};

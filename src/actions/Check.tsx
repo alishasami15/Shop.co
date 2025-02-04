@@ -40,7 +40,8 @@ const CreateOrderInSanity = async (cartData:Clothes[], customer_id:string)=>
                         _type:"items",
                         _id : item._id,
                         product_name:item.name,
-                        product_description:item.description,
+                        product_size:item.size,
+                        product_color:item.color,
                         product_price:item.price,
                         quantity:1
                     }

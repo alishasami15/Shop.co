@@ -1,5 +1,5 @@
-export type Customer = { 
-    name: string;
-    email: string;
-    phone: string;
-  };
+export default interface Customer {
+  name: string;
+  email: string;
+  phone: string;
+}
