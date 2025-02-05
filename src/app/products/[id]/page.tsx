@@ -8,7 +8,7 @@ import AllReview from "@/components/allreview";
 import Tshirts from "@/components/image9";
 import { useRouter } from "next/navigation"; 
 import  Producted  from "@/types/producted";
-import type  {CartItem} from "@/types/cart";
+import { CartItem } from "@/types/cart";
 
 const star = [<FaStar key={1} />, <FaStar key={2} />, <FaStar key={3} />, <FaStar key={4} />, <FaStar key={5} />];
 
@@ -61,18 +61,18 @@ export default function Pro_Detail() {
     }
     
  const handleAddToCart =(item: Producted) => {
-    const cartItem: CartItem = {
-      id: item.id,
-      title: item.title,
-      price: item.price,
-      size: selectedSize,
-      color: selectedColor,
-      quantity: quantity,
-    };
+  const cartItem: CartItem = {
+    id: String(item.id), 
+    title: item.title,
+    price: item.price,
+    size: selectedSize,
+    color: selectedColor,
+    quantity: quantity,
+  };
   
-    // addToCart(item); 
-    addToCart(cartItem); 
-    router.push("/cart");
+      addToCart(cartItem); 
+      router.push("/cart");
+  
   };
   return (
     <>
