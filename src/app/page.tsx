@@ -9,20 +9,13 @@ export default function Home() {
   return (
    
    <div>
-   
-   
+
+
     <Herosection/>
     <Products/>
     <Sell/>
     <Picture/>
-   
-
-
- 
-    
-    
-   
-    
+     
    </div>
    
   );

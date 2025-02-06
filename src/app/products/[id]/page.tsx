@@ -8,7 +8,7 @@ import AllReview from "@/components/allreview";
 import Tshirts from "@/components/image9";
 import { useRouter } from "next/navigation"; 
 import  Producted  from "@/types/producted";
-import { CartItem } from "@/types/cart";
+import { CartItem } from '@/types/cart'; 
 
 const star = [<FaStar key={1} />, <FaStar key={2} />, <FaStar key={3} />, <FaStar key={4} />, <FaStar key={5} />];
 
@@ -67,13 +67,14 @@ export default function Pro_Detail() {
     price: item.price,
     size: selectedSize,
     color: selectedColor,
-    quantity: quantity,
+    quantity: 1,
   };
   
       addToCart(cartItem); 
       router.push("/cart");
   
   };
+
   return (
     <>
       <div className="flex flex-col md:flex-row justify-center sm:justify-evenly sm:mt-10 p-5 sm:p-0 max-w-screen-2xl mx-auto">
