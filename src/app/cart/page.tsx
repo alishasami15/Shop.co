@@ -1,9 +1,9 @@
-"use client"; 
-import { useCart } from "@/context/CartContext"; 
-import { useRouter } from "next/navigation"; 
+"use client";
+import { useCart } from "@/context/CartContext";
+import { useRouter } from "next/navigation";
 
 const CartPage = () => {
-  const { cart, removeFromCart } = useCart();
+  const { cart, removeFromCart } = useCart();  
   const router = useRouter();
 
   return (
@@ -23,7 +23,7 @@ const CartPage = () => {
                   <p className="text-sm font-bold">${item.price}</p>
                 </div>
                 <button
-                  onClick={() => removeFromCart(item.id)}
+                  onClick={() => removeFromCart(item.id)}  
                   className="text-red-500 text-sm"
                 >
                   Remove
@@ -33,12 +33,13 @@ const CartPage = () => {
           </ul>
 
           <button
-            onClick={() => router.push("/checkout")} // Handle redirect to checkout page
+            onClick={() => router.push("/checkout")}
             className="mt-5 w-full bg-black text-white py-2 rounded-lg"
           >
             Proceed to Checkout
           </button>
-        </>      )}
+        </>
+      )}
     </div>
   );
 };

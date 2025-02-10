@@ -6,3 +6,4 @@ export interface CartItem {
   color?: string;  
   quantity: number;
 }
+
