@@ -35,7 +35,7 @@ const Page = () => {
         <div className="flex flex-col md:flex-row gap-4 pt-10">
           <div className="flex justify-center items-center ml-1">
             <Image
-              src="/shirt (2).png"
+              src="/shirt(2).png"
               alt="img"
               width={250}
               height={880}
@@ -44,14 +44,14 @@ const Page = () => {
           </div>
           <div className="flex gap-2 md:flex-col mt-18 ml-10 lg-gap-2 md:hidden">
             <Image
-              src="/shirt (2).png"
+              src="/shirt(2).png"
               alt="img"
               width={80}
               height={160}
               className="rounded-lg md:w-full"
             />
             <Image
-              src="/shirt (2).png"
+              src="/shirt(2).png"
               alt="img"
               width={80}
               height={160}
@@ -73,7 +73,7 @@ const Page = () => {
             One Life Graphic T-shirt
           </h1>
           <div className="flex flex-col gap-2 mt-4">
-            <Image src="/star 1.png" alt="img" width={200} height={24} />
+            <Image src="/star1.png" alt="img" width={200} height={24} />
             <Image src="/$ 1.png" alt="img" width={280} height={80} />
           </div>
           <p className="text-lg mt-4 text-gray-600">
@@ -157,7 +157,7 @@ const Page = () => {
               className="border p-6 rounded-lg shadow-sm flex flex-col gap-4"
             >
               <Image src="/star.png" alt="img" width={127} height={22} />
-              <Image src={`/correct.png`} alt="img" width={145} height={24} />
+              <Image src="/correct.png" alt="img" width={145} height={24} />
               <p className="text-gray-700">
                 This t-shirt exceeded my expectations! The colors are vibrant and
                 the print quality is top-notch.

@@ -19,26 +19,26 @@ const  product:Iproducts[] = [
      title:"Vertical Striped Shirt",
      id:5,
      price:"$200",
-     img_url:"/image 5.png"
+     img_url:"/images/image 5.png"
     },
     {
      title:"Courage Graphic T-Shirt",
      id:6,
      price:"$300",
-     img_url:"/image 6.png",
+     img_url:"/images/image 6.png",
      old_price:"$200"
     },
     {
      title:"Loose Fit Bermuda Sports",
      id:7,
      price:"$180",
-     img_url:"/image 7.png",
+     img_url:"/images/image 7.png",
     },
     {
      title:"Faded Skinny Jeans",
      id:8,
      price:"$120",
-     img_url:"/image 8.png",
+     img_url:"/images/image 8.png",
      old_price:"$200"
 
     }

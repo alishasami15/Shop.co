@@ -19,7 +19,7 @@ const product:Iproducts[] = [
      title:"T-SHIRT WITH TAPE DETAILS",
      id:1,
      price:"$140",
-     img_url:"/images/image-1.png"
+     img_url:"/images/image 1.png"
      
     },
     {
