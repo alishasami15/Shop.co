@@ -17,26 +17,26 @@ const  product:Iproducts[] = [
      title:"Vertical Striped Shirt",
      id:4,
      price:"$200",
-     img_url:"/image 4.png"
+     img_url:"/images/image 4.png"
     },
     {
      title:"Courage Graphic T-Shirt",
      id:9,
      price:"$300",
-     img_url:"/blue.png",
+     img_url:"/images/blue.png",
      old_price:"$200"
     },
     {
      title:"CHECKERED SHIRT",
      id:1,
      price:"$180",
-     img_url:"/image 1.png",
+     img_url:"/images/image 1.png",
     },
     {
      title:"SLEEVE STRIPED T-SHIRT",
      id:12,
      price:"$120",
-     img_url:"/white.png",
+     img_url:"/images/white.png",
      old_price:"$200"
 
     }
