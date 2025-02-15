@@ -30,18 +30,18 @@ interface CartItem {
 
 
 const products: Product[] = [
-  { title: "T-SHIRT WITH TAPE DETAILS", id: 1, price: 140, img3: "/images/image-1.png" },
-  { title: "SKINNY FIT JEANS", id: 2, price: 120, img3: "/image 2.png" },
-  { title: "CHECKERED SHIRT", id: 3, price: 120 , img3: "/image 3.png" },
-  { title: "SLEEVE STRIPED T-SHIRT", id: 4, price: 120, img3: "/image 4.png" },
-  { title: "Vertical Striped Shirt", id: 5, price: 180,  img3: "/image 5.png" },
-  { title: "Courage Graphic T-Shirt", id: 6, price: 190 ,img3: "/image 6.png" },
-  { title: "Loose Fit Bermuda Sports", id: 7, price: 200 , img3: "/image 7.png" },
-  { title: "Faded Skinny Jeans", id: 8, price: 240, img3: "/image 8.png" },
-  { title: "Vertical Striped Shirt", id: 9, price: 180,  img3: "/blue.png" },
-  { title: "Courage Graphic T-Shirt", id: 10, price: 190, img3: "/white.png" },
-  { title: "CHECKERED SHIRT", id: 11, price: 300,  img3: "/pink.png" },
-  { title: "SLEEVE STRIPED T-SHIRT", id: 12, price: 150, img3: "/shirt-color.png" },
+  { title: "T-SHIRT WITH TAPE DETAILS", id: 1, price: 140, img3: "/images/image 1.png" },
+  { title: "SKINNY FIT JEANS", id: 2, price: 120, img3: "/images/image 2.png" },
+  { title: "CHECKERED SHIRT", id: 3, price: 120 , img3: "/images/image 3.png" },
+  { title: "SLEEVE STRIPED T-SHIRT", id: 4, price: 120, img3: "/images/image 4.png" },
+  { title: "Vertical Striped Shirt", id: 5, price: 180,  img3: "/images/image 5.png" },
+  { title: "Courage Graphic T-Shirt", id: 6, price: 190 ,img3: "/images/image 6.png" },
+  { title: "Loose Fit Bermuda Sports", id: 7, price: 200 , img3: "/images/image 7.png" },
+  { title: "Faded Skinny Jeans", id: 8, price: 240, img3: "/images/image 8.png" },
+  { title: "Vertical Striped Shirt", id: 9, price: 180,  img3: "/images/blue.png" },
+  { title: "Courage Graphic T-Shirt", id: 10, price: 190, img3: "/images/pink.png" },
+  { title: "CHECKERED SHIRT", id: 11, price: 300,  img3: "/images/shirt-color.png" },
+  { title: "SLEEVE STRIPED T-SHIRT", id: 12, price: 150, img3: "/images/white.png" },
 ];
 
 export default function Pro_Detail() {
